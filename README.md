@@ -1,4 +1,4 @@
-Angry-Tanks
-===========
+iOS-Game-Dev-Skeleton
+=====================
 
-In class Tank project
+An ARC enabled Cocos2D skeleton with Chipmunk Pro Trial
