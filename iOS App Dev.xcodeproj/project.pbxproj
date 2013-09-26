@@ -143,6 +143,15 @@
 		0B3130E117E85D0D00D0829B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B3130E017E85D0D00D0829B /* ImageIO.framework */; };
 		0B31313D17E85ECE00D0829B /* libChipmunkPro-iPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B31313B17E85ECE00D0829B /* libChipmunkPro-iPhone.a */; };
 		0B31314017E8662800D0829B /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B31313F17E8662800D0829B /* Game.m */; };
+		36839A6717F4920800F29FC1 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 36839A6617F4920800F29FC1 /* Player.m */; };
+		36839A6917F49CE500F29FC1 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36839A6817F49CE500F29FC1 /* Configuration.plist */; };
+		36839A8917F4ACFE00F29FC1 /* Tank-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 36839A8717F4ACFE00F29FC1 /* Tank-hd.png */; };
+		36839A8A17F4ACFE00F29FC1 /* Tank.png in Resources */ = {isa = PBXBuildFile; fileRef = 36839A8817F4ACFE00F29FC1 /* Tank.png */; };
+		36839A8E17F4BF4100F29FC1 /* BackgroundMountains-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 36839A8C17F4BF4100F29FC1 /* BackgroundMountains-hd.png */; };
+		36839A8F17F4BF4100F29FC1 /* BackgroundMountains.png in Resources */ = {isa = PBXBuildFile; fileRef = 36839A8D17F4BF4100F29FC1 /* BackgroundMountains.png */; };
+		36839A9217F4D33800F29FC1 /* Landscape-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 36839A9017F4D33800F29FC1 /* Landscape-hd.png */; };
+		36839A9317F4D33800F29FC1 /* Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 36839A9117F4D33800F29FC1 /* Landscape.png */; };
+		36839A9617F4EB8E00F29FC1 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36839A9517F4EB8E00F29FC1 /* InputLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -470,6 +479,17 @@
 		0B31313C17E85ECE00D0829B /* ObjectiveChipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveChipmunk.h; sourceTree = "<group>"; };
 		0B31313E17E8662800D0829B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		0B31313F17E8662800D0829B /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		36839A6517F4920800F29FC1 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		36839A6617F4920800F29FC1 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		36839A6817F49CE500F29FC1 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		36839A8717F4ACFE00F29FC1 /* Tank-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tank-hd.png"; path = "Resources/Tank-hd.png"; sourceTree = "<group>"; };
+		36839A8817F4ACFE00F29FC1 /* Tank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tank.png; path = Resources/Tank.png; sourceTree = "<group>"; };
+		36839A8C17F4BF4100F29FC1 /* BackgroundMountains-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundMountains-hd.png"; sourceTree = "<group>"; };
+		36839A8D17F4BF4100F29FC1 /* BackgroundMountains.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundMountains.png; sourceTree = "<group>"; };
+		36839A9017F4D33800F29FC1 /* Landscape-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Landscape-hd.png"; sourceTree = "<group>"; };
+		36839A9117F4D33800F29FC1 /* Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Landscape.png; sourceTree = "<group>"; };
+		36839A9417F4EB8E00F29FC1 /* InputLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputLayer.h; sourceTree = "<group>"; };
+		36839A9517F4EB8E00F29FC1 /* InputLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,8 +553,12 @@
 		0B312F4117E85CF200D0829B /* iOS App Dev */ = {
 			isa = PBXGroup;
 			children = (
+				36839A6517F4920800F29FC1 /* Player.h */,
+				36839A6617F4920800F29FC1 /* Player.m */,
 				0B3130D217E85CF400D0829B /* AppDelegate.h */,
 				0B3130D317E85CF400D0829B /* AppDelegate.m */,
+				36839A9417F4EB8E00F29FC1 /* InputLayer.h */,
+				36839A9517F4EB8E00F29FC1 /* InputLayer.m */,
 				0B3130D817E85CF400D0829B /* IntroLayer.h */,
 				0B3130D917E85CF400D0829B /* IntroLayer.m */,
 				0B31313E17E8662800D0829B /* Game.h */,
@@ -549,6 +573,12 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				36839A9017F4D33800F29FC1 /* Landscape-hd.png */,
+				36839A9117F4D33800F29FC1 /* Landscape.png */,
+				36839A8C17F4BF4100F29FC1 /* BackgroundMountains-hd.png */,
+				36839A8D17F4BF4100F29FC1 /* BackgroundMountains.png */,
+				36839A8717F4ACFE00F29FC1 /* Tank-hd.png */,
+				36839A8817F4ACFE00F29FC1 /* Tank.png */,
 				0B312F4317E85CF200D0829B /* Default.png */,
 				0B312F4517E85CF200D0829B /* Default@2x.png */,
 				0B312F4717E85CF200D0829B /* Default-568h@2x.png */,
@@ -561,6 +591,7 @@
 				0B312F5517E85CF200D0829B /* Icon@2x.png */,
 				0B312F5717E85CF200D0829B /* Info.plist */,
 				0B312F5817E85CF200D0829B /* iTunesArtwork */,
+				36839A6817F49CE500F29FC1 /* Configuration.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1020,7 +1051,7 @@
 		0B312F2217E85CF200D0829B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Sveinn Fannar Kristjansson";
 			};
 			buildConfigurationList = 0B312F2517E85CF200D0829B /* Build configuration list for PBXProject "iOS App Dev" */;
@@ -1049,14 +1080,21 @@
 				0B312F4617E85CF200D0829B /* Default@2x.png in Resources */,
 				0B312F4817E85CF200D0829B /* Default-568h@2x.png in Resources */,
 				0B312F4A17E85CF200D0829B /* Default-Landscape~ipad.png in Resources */,
+				36839A8E17F4BF4100F29FC1 /* BackgroundMountains-hd.png in Resources */,
 				0B312F4C17E85CF200D0829B /* Icon-72.png in Resources */,
+				36839A6917F49CE500F29FC1 /* Configuration.plist in Resources */,
 				0B312F4E17E85CF200D0829B /* Icon-Small-50.png in Resources */,
+				36839A8917F4ACFE00F29FC1 /* Tank-hd.png in Resources */,
+				36839A9217F4D33800F29FC1 /* Landscape-hd.png in Resources */,
 				0B312F5017E85CF200D0829B /* Icon-Small.png in Resources */,
 				0B312F5217E85CF200D0829B /* Icon-Small@2x.png in Resources */,
 				0B312F5417E85CF200D0829B /* Icon.png in Resources */,
+				36839A9317F4D33800F29FC1 /* Landscape.png in Resources */,
 				0B312F5617E85CF200D0829B /* Icon@2x.png in Resources */,
+				36839A8A17F4ACFE00F29FC1 /* Tank.png in Resources */,
 				0B312F5917E85CF200D0829B /* iTunesArtwork in Resources */,
 				0B3130B217E85CF400D0829B /* ChangeLog in Resources */,
+				36839A8F17F4BF4100F29FC1 /* BackgroundMountains.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1071,6 +1109,7 @@
 				0B312F6117E85CF200D0829B /* CCActionCamera.m in Sources */,
 				0B312F6417E85CF200D0829B /* CCActionCatmullRom.m in Sources */,
 				0B312F6717E85CF200D0829B /* CCActionEase.m in Sources */,
+				36839A9617F4EB8E00F29FC1 /* InputLayer.m in Sources */,
 				0B312F6A17E85CF200D0829B /* CCActionGrid.m in Sources */,
 				0B312F6D17E85CF200D0829B /* CCActionGrid3D.m in Sources */,
 				0B312F7017E85CF200D0829B /* CCActionInstant.m in Sources */,
@@ -1102,6 +1141,7 @@
 				0B312FBF17E85CF300D0829B /* CCLayer.m in Sources */,
 				0B312FC317E85CF300D0829B /* CCMenu.m in Sources */,
 				0B312FC617E85CF300D0829B /* CCMenuItem.m in Sources */,
+				36839A6717F4920800F29FC1 /* Player.m in Sources */,
 				0B312FC917E85CF300D0829B /* CCMotionStreak.m in Sources */,
 				0B312FCC17E85CF300D0829B /* CCNode+Debug.m in Sources */,
 				0B312FCF17E85CF300D0829B /* CCNode.m in Sources */,
@@ -1188,7 +1228,12 @@
 		0B3130DB17E85CF400D0829B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1198,9 +1243,14 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1209,7 +1259,12 @@
 		0B3130DC17E85CF400D0829B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1217,7 +1272,11 @@
 					"NS_BLOCK_ASSERTIONS=1",
 				);
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
@@ -1234,9 +1293,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS App Dev/Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"iOS App Dev/libs/kazmath/include\"",
-				);
+				HEADER_SEARCH_PATHS = "\"iOS App Dev/libs/kazmath/include\"";
 				INFOPLIST_FILE = "iOS App Dev/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -1261,9 +1318,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS App Dev/Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"iOS App Dev/libs/kazmath/include\"",
-				);
+				HEADER_SEARCH_PATHS = "\"iOS App Dev/libs/kazmath/include\"";
 				INFOPLIST_FILE = "iOS App Dev/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
