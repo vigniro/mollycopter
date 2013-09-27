@@ -63,28 +63,37 @@
 
 - (void)setupGraphicsLandscape
 {
-    _skyLayer = [CCLayerGradient layerWithColor:ccc4(89, 67, 245, 255) fadingTo:ccc4(255, 219, 245, 255)];
-    [self addChild:_skyLayer];
-    
     _parallaxNode = [CCParallaxNode node];
     [self addChild:_parallaxNode];
     
-    CCSprite *mountains = [CCSprite spriteWithFile:@"BackgroundMountains.png"];
-    mountains.anchorPoint = ccp(0, 0);
-    [_parallaxNode addChild:mountains z:0 parallaxRatio:ccp(0.5f, 1.0f) positionOffset:CGPointZero];
+    CCSprite *skylayer = [CCSprite spriteWithFile:@"skylayerClean.png"];
+    skylayer.anchorPoint = ccp(0, 0);
+    [_parallaxNode addChild:skylayer z:0 parallaxRatio:ccp(0.0f, 0.0f) positionOffset:CGPointZero];
+    
+    CCSprite *moon = [CCSprite spriteWithFile:@"fullmoonsingle.png"];
+    moon.anchorPoint = ccp(0, 0);
+    [_parallaxNode addChild:moon z:1 parallaxRatio:ccp(0.5f, 1.0f) positionOffset:CGPointZero];
+    
+    CCSprite *skyline = [CCSprite spriteWithFile:@"skylineSilhouette.png"];
+    skyline.anchorPoint = ccp(0, 0);
+    [_parallaxNode addChild:skyline z:2 parallaxRatio:ccp(0.5f, 1.0f) positionOffset:CGPointZero];
+    
+    CCSprite *brickWall = [CCSprite spriteWithFile:@"brickWall.png"];
+    brickWall.anchorPoint = ccp(0, 0);
+    [_parallaxNode addChild:brickWall z:3 parallaxRatio:ccp(0.5f, 1.0f) positionOffset:CGPointZero];
     
     CCSprite *floor = [CCSprite spriteWithFile:@"floor.png"];
     floor.anchorPoint = ccp(0, 0);
     //_floorWidth = floor.contentSize.width; // TODO : This is important, something something for the world.
-    [_parallaxNode addChild:floor z:1 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
+    [_parallaxNode addChild:floor z:4 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
     
     CCSprite *ceiling = [CCSprite spriteWithFile:@"ceiling.png"];
     ceiling.anchorPoint = ccp(0, 0);
     //_ceilingWidth = ceiling.contentSize.width;
-    [_parallaxNode addChild:ceiling z:1 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
+    [_parallaxNode addChild:ceiling z:4 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
     
     _gameNode = [CCNode node];
-    [_parallaxNode addChild:_gameNode z:2 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
+    [_parallaxNode addChild:_gameNode z:5 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
     
     
 
