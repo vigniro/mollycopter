@@ -37,7 +37,7 @@
         
         // Setup world
         [self setupGraphicsLandscape];
-        [self setupPhysicsLandscape];
+        [self setUpPhysicsLandscape];
         
         // Create debug node
         CCPhysicsDebugNode *debugNode = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
@@ -114,6 +114,7 @@
 - (void)setUpPhysicsLandscape
 {
     //TODO Implement
+    
 }
 
 - (void)update:(ccTime)delta
