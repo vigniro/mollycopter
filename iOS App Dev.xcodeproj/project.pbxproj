@@ -154,6 +154,7 @@
 		36839A9617F4EB8E00F29FC1 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36839A9517F4EB8E00F29FC1 /* InputLayer.m */; };
 		36839A9D17F60F2300F29FC1 /* ceiling.png in Resources */ = {isa = PBXBuildFile; fileRef = 36839A9B17F60F2300F29FC1 /* ceiling.png */; };
 		36839A9E17F60F2300F29FC1 /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 36839A9C17F60F2300F29FC1 /* floor.png */; };
+		9CAD33BF17F61E3C00705057 /* mileyBall.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD33BE17F61E3C00705057 /* mileyBall.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -494,6 +495,7 @@
 		36839A9517F4EB8E00F29FC1 /* InputLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputLayer.m; sourceTree = "<group>"; };
 		36839A9B17F60F2300F29FC1 /* ceiling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ceiling.png; sourceTree = "<group>"; };
 		36839A9C17F60F2300F29FC1 /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor.png; sourceTree = "<group>"; };
+		9CAD33BE17F61E3C00705057 /* mileyBall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mileyBall.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -577,6 +579,7 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9CAD33BE17F61E3C00705057 /* mileyBall.png */,
 				36839A9B17F60F2300F29FC1 /* ceiling.png */,
 				36839A9C17F60F2300F29FC1 /* floor.png */,
 				36839A9017F4D33800F29FC1 /* Landscape-hd.png */,
@@ -1103,6 +1106,7 @@
 				0B312F5917E85CF200D0829B /* iTunesArtwork in Resources */,
 				0B3130B217E85CF400D0829B /* ChangeLog in Resources */,
 				36839A8F17F4BF4100F29FC1 /* BackgroundMountains.png in Resources */,
+				9CAD33BF17F61E3C00705057 /* mileyBall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1301,7 +1305,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS App Dev/Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"iOS App Dev/libs/kazmath/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"iOS App Dev/libs/kazmath/include\"",
+				);
 				INFOPLIST_FILE = "iOS App Dev/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -1326,7 +1332,9 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS App Dev/Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"iOS App Dev/libs/kazmath/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"iOS App Dev/libs/kazmath/include\"",
+				);
 				INFOPLIST_FILE = "iOS App Dev/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (

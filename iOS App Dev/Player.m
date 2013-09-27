@@ -12,7 +12,7 @@
 @implementation Player
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
 {
-    self = [super initWithFile:@"Tank.png"];
+    self = [super initWithFile:@"mileyBall.png"];
     if (self)
     {
         _space = space;
