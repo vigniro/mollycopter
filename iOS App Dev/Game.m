@@ -53,7 +53,10 @@
         NSString *playerPositionString = _configuration[@"playerPosition"];
         _player = [[Player alloc] initWithSpace:_space position:CGPointFromString(playerPositionString)];
         [_gameNode addChild:_player];
-        //[self addChild:_player];
+        cpVect forceVector = cpvmult(ccp(1,0), 50000);
+        [_player.chipmunkBody applyForce:forceVector offset:cpvzero];
+        
+        _playerFollow = YES;
         
         // Your initilization code goes here
         [self scheduleUpdate];
@@ -84,7 +87,7 @@
     
     CCSprite *floor = [CCSprite spriteWithFile:@"floor.png"];
     floor.anchorPoint = ccp(0, 0);
-    //_floorWidth = floor.contentSize.width; // TODO : This is important, something something for the world.
+    _landscapeWidth = floor.contentSize.width; // TODO : This is important, something something for the world.
     [_parallaxNode addChild:floor z:4 parallaxRatio:ccp(1.0f, 1.0f) positionOffset:CGPointZero];
     
     CCSprite *ceiling = [CCSprite spriteWithFile:@"ceiling.png"];
@@ -101,16 +104,6 @@
 
 - (void)setUpPhysicsLandscape
 {
-    //TODO Implement
-//    NSLog(@"START: Setting up physics landscape.");
-//    CCSprite* floor = [CCSprite spriteWithFile:@"floor.png"];
-//    CGSize size = floor.textureRect.size;
-//    ChipmunkBody *body = [ChipmunkBody staticBody];
-//    body.pos = ccp(0, size.height);
-//    ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:size.width height:size.height];
-//    [_space addShape:shape];
-//    NSLog(@"END: Setting up physics landscape.");
-    
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"floor" withExtension:@"png"];
     ChipmunkImageSampler *sampler = [ChipmunkImageSampler samplerWithImageFile:url isMask:NO];
     
@@ -167,6 +160,16 @@
     }
     
     // TODO - Make 'camera' follow the player
+    if (_playerFollow == YES)
+    {
+        if (_player.position.x >= (_winSize.width / 2) )//&& _player.position.x < (_landscapeWidth - (_winSize.width / 2)))
+        {
+            NSLog(@"Spam.");
+            _parallaxNode.position = ccp(-(_player.position.x - (_winSize.width / 2)), 0);
+        }
+    }
+    
+    
     
     // Checking to see if the paralax effect works.
     //CGPoint backgroundScrollVel = ccp(-10, 0);

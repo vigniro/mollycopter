@@ -36,6 +36,10 @@
             
             // Add to pysics sprite
             self.chipmunkBody = body;
+            
+            // Apply a constant lateral force to make the player move to the right.
+            //cpVect forceVector = cpvmult(ccp(0,1), 100000);
+            //[self.chipmunkBody applyForce:forceVector offset:cpvzero];
         }
     }
     return self;
@@ -50,7 +54,8 @@
 - (void)removeForces
 {
     NSLog(@"Force before reset: %@",NSStringFromCGPoint(self.chipmunkBody.body->f));
-    [self.chipmunkBody resetForces];
+    //[self.chipmunkBody resetForces];
+    self.chipmunkBody.body->f.y = 0;
     NSLog(@"Force after reset: %@",NSStringFromCGPoint(self.chipmunkBody.body->f));
 }
 

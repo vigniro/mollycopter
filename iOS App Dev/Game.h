@@ -24,6 +24,7 @@
     CCNode *_gameNode;
     CCParallaxNode *_parallaxNode;
     CGFloat _landscapeWidth;
+    BOOL _playerFollow;
 }
 
 @end
