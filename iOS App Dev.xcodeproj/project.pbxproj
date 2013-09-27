@@ -152,6 +152,8 @@
 		36839A9217F4D33800F29FC1 /* Landscape-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 36839A9017F4D33800F29FC1 /* Landscape-hd.png */; };
 		36839A9317F4D33800F29FC1 /* Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 36839A9117F4D33800F29FC1 /* Landscape.png */; };
 		36839A9617F4EB8E00F29FC1 /* InputLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36839A9517F4EB8E00F29FC1 /* InputLayer.m */; };
+		36839A9D17F60F2300F29FC1 /* ceiling.png in Resources */ = {isa = PBXBuildFile; fileRef = 36839A9B17F60F2300F29FC1 /* ceiling.png */; };
+		36839A9E17F60F2300F29FC1 /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 36839A9C17F60F2300F29FC1 /* floor.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -490,6 +492,8 @@
 		36839A9117F4D33800F29FC1 /* Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Landscape.png; sourceTree = "<group>"; };
 		36839A9417F4EB8E00F29FC1 /* InputLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputLayer.h; sourceTree = "<group>"; };
 		36839A9517F4EB8E00F29FC1 /* InputLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputLayer.m; sourceTree = "<group>"; };
+		36839A9B17F60F2300F29FC1 /* ceiling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ceiling.png; sourceTree = "<group>"; };
+		36839A9C17F60F2300F29FC1 /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -573,6 +577,8 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				36839A9B17F60F2300F29FC1 /* ceiling.png */,
+				36839A9C17F60F2300F29FC1 /* floor.png */,
 				36839A9017F4D33800F29FC1 /* Landscape-hd.png */,
 				36839A9117F4D33800F29FC1 /* Landscape.png */,
 				36839A8C17F4BF4100F29FC1 /* BackgroundMountains-hd.png */,
@@ -1085,11 +1091,13 @@
 				36839A6917F49CE500F29FC1 /* Configuration.plist in Resources */,
 				0B312F4E17E85CF200D0829B /* Icon-Small-50.png in Resources */,
 				36839A8917F4ACFE00F29FC1 /* Tank-hd.png in Resources */,
+				36839A9D17F60F2300F29FC1 /* ceiling.png in Resources */,
 				36839A9217F4D33800F29FC1 /* Landscape-hd.png in Resources */,
 				0B312F5017E85CF200D0829B /* Icon-Small.png in Resources */,
 				0B312F5217E85CF200D0829B /* Icon-Small@2x.png in Resources */,
 				0B312F5417E85CF200D0829B /* Icon.png in Resources */,
 				36839A9317F4D33800F29FC1 /* Landscape.png in Resources */,
+				36839A9E17F60F2300F29FC1 /* floor.png in Resources */,
 				0B312F5617E85CF200D0829B /* Icon@2x.png in Resources */,
 				36839A8A17F4ACFE00F29FC1 /* Tank.png in Resources */,
 				0B312F5917E85CF200D0829B /* iTunesArtwork in Resources */,
