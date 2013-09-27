@@ -146,8 +146,6 @@
     [_player removeForces];
 }
 
-
-
 - (void)update:(ccTime)delta
 {
     // Update logic goes here
@@ -159,22 +157,14 @@
         _accumulator -= fixedTimeStep;
     }
     
-    // TODO - Make 'camera' follow the player
+    // Make the camera follow the player.
     if (_playerFollow == YES)
     {
         if (_player.position.x >= (_winSize.width / 2) )//&& _player.position.x < (_landscapeWidth - (_winSize.width / 2)))
         {
-            NSLog(@"Spam.");
             _parallaxNode.position = ccp(-(_player.position.x - (_winSize.width / 2)), 0);
         }
     }
-    
-    
-    
-    // Checking to see if the paralax effect works.
-    //CGPoint backgroundScrollVel = ccp(-10, 0);
-    //_parallaxNode.position = ccpAdd(_parallaxNode.position, ccpMult(backgroundScrollVel, delta));
-    
 }
 @end
 
