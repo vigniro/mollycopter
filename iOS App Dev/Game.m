@@ -29,11 +29,11 @@
         _space.gravity = ccp(0.0f, -gravity);
         
         // Register collision handler
-        [_space setDefaultCollisionHandler:self
-                                     begin:@selector(collisionBegan:space:)
-                                  preSolve:nil
-                                 postSolve:nil
-                                  separate:nil];
+        //[_space setDefaultCollisionHandler:self
+        //                             begin:@selector(collisionBegan:space:)
+        //                          preSolve:nil
+        //                            postSolve:nil
+        //                          separate:nil];
         
         // Setup world
         [self setupGraphicsLandscape];
@@ -41,7 +41,7 @@
         
         // Create debug node
         CCPhysicsDebugNode *debugNode = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
-        debugNode.visible = NO;
+        debugNode.visible = YES;
         [self addChild:debugNode];
         
         // Create a input layer
@@ -102,7 +102,42 @@
 - (void)setUpPhysicsLandscape
 {
     //TODO Implement
+//    NSLog(@"START: Setting up physics landscape.");
+//    CCSprite* floor = [CCSprite spriteWithFile:@"floor.png"];
+//    CGSize size = floor.textureRect.size;
+//    ChipmunkBody *body = [ChipmunkBody staticBody];
+//    body.pos = ccp(0, size.height);
+//    ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:size.width height:size.height];
+//    [_space addShape:shape];
+//    NSLog(@"END: Setting up physics landscape.");
     
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"floor" withExtension:@"png"];
+    ChipmunkImageSampler *sampler = [ChipmunkImageSampler samplerWithImageFile:url isMask:NO];
+    
+    ChipmunkPolylineSet *contour = [sampler marchAllWithBorder:NO hard:YES];
+    ChipmunkPolyline *line = [contour lineAtIndex:0];
+    ChipmunkPolyline *simpleLine = [line simplifyCurves:1];
+    
+    ChipmunkBody *terrainBody = [ChipmunkBody staticBody];
+    NSArray *terrainShapes = [simpleLine asChipmunkSegmentsWithBody:terrainBody radius:0 offset:cpvzero];
+    for (ChipmunkShape *shape in terrainShapes)
+    {
+        [_space addShape:shape];
+    }
+    
+    NSURL *ceilingUrl = [[NSBundle mainBundle] URLForResource:@"ceiling" withExtension:@"png"];
+    ChipmunkImageSampler *ceilingSampler = [ChipmunkImageSampler samplerWithImageFile:ceilingUrl isMask:NO];
+    
+    ChipmunkPolylineSet *ceilingContour = [ceilingSampler marchAllWithBorder:NO hard:YES];
+    ChipmunkPolyline *ceilingLine = [ceilingContour lineAtIndex:0];
+    ChipmunkPolyline *ceilingSimpleLine = [ceilingLine simplifyCurves:1];
+    
+    ChipmunkBody *ceilingTerrainBody = [ChipmunkBody staticBody];
+    NSArray *ceilingTerrainShapes = [ceilingSimpleLine asChipmunkSegmentsWithBody:ceilingTerrainBody radius:0 offset:cpvzero];
+    for (ChipmunkShape *shape in ceilingTerrainShapes)
+    {
+        [_space addShape:shape];
+    }
 }
 
 - (void)touchStarted
