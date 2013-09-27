@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>gravity</key>
+	<string>300.0f</string>
 	<key>flyForce</key>
 	<real>1000</real>
 	<key>playerPosition</key>

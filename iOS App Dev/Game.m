@@ -37,7 +37,7 @@
         
         // Setup world
         [self setupGraphicsLandscape];
-        //[self setupPhysicsLandscape];
+        [self setupPhysicsLandscape];
         
         // Create debug node
         CCPhysicsDebugNode *debugNode = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
@@ -107,6 +107,7 @@
 
 - (void)touchEnded
 {
+    NSLog(@"No longer touching.");
     [_player removeForces];
 }
 
@@ -129,8 +130,8 @@
     // TODO - Make 'camera' follow the player
     
     // Checking to see if the paralax effect works.
-    CGPoint backgroundScrollVel = ccp(-10, 0);
-    _parallaxNode.position = ccpAdd(_parallaxNode.position, ccpMult(backgroundScrollVel, delta));
+    //CGPoint backgroundScrollVel = ccp(-10, 0);
+    //_parallaxNode.position = ccpAdd(_parallaxNode.position, ccpMult(backgroundScrollVel, delta));
     
 }
 @end

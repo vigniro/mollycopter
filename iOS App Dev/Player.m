@@ -41,17 +41,17 @@
     return self;
 }
 
-// TODO actual fly behaviour.
 - (void)flyWithForce
 {
-    //
     cpVect forceVector = cpvmult(ccp(0,1), self.chipmunkBody.mass * [_configuration[@"flyForce"] floatValue]);
     [self.chipmunkBody applyForce:forceVector offset:cpvzero];
 }
 
 - (void)removeForces
 {
+    NSLog(@"Force before reset: %@",NSStringFromCGPoint(self.chipmunkBody.body->f));
     [self.chipmunkBody resetForces];
+    NSLog(@"Force after reset: %@",NSStringFromCGPoint(self.chipmunkBody.body->f));
 }
 
 @end
