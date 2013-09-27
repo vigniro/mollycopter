@@ -12,9 +12,15 @@
 @interface Player : CCPhysicsSprite
 {
     ChipmunkSpace *_space;
+    NSDictionary *_configuration;
+    CGFloat _flyforce;
 }
 
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
-- (void)flyWithPower:(CGFloat)power vector:(cpVect)vector;
+- (void)flyWithForce;
+- (void)removeForces;
+
+//@property (nonatomic, strong) CGFloat flyForce;§§
+
 
 @end

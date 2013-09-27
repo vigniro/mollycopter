@@ -7,6 +7,7 @@
 //
 
 #import "Player.h"
+#import "chipmunk.h"
 
 @implementation Player
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
@@ -18,6 +19,9 @@
         
         if (_space != nil)
         {
+            _configuration = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"]];
+            //_flyForce = [_configuration[@"flyForce" ] floatValue];
+
             CGSize size = self.textureRect.size;
             cpFloat mass = size.width * size.height;
             cpFloat moment = cpMomentForBox(mass, size.width, size.height);
@@ -38,9 +42,18 @@
 }
 
 // TODO actual fly behaviour.
-- (void)flyWithPower:(CGFloat)power vector:(cpVect)vector
+- (void)flyWithForce
 {
-    cpVect impulseVector = cpvmult(vector, self.chipmunkBody.mass * power);
-    [self.chipmunkBody applyImpulse:impulseVector offset:cpvzero];
+    //
+    cpVect forceVector = cpvmult(ccp(0,1), self.chipmunkBody.mass * [_configuration[@"flyForce"] floatValue]);
+    [self.chipmunkBody applyForce:forceVector offset:cpvzero];
 }
+
+- (void)removeForces
+{
+    [self.chipmunkBody resetForces];
+}
+
 @end
+
+

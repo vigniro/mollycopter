@@ -98,6 +98,17 @@
 
 }
 
+- (void)touchStarted
+{
+    NSLog(@"Touch started.");
+    //cpVect vector = cpv(0.0f, [_configuration[@"flyForce"] floatValue]);
+    [_player flyWithForce];
+}
+
+- (void)touchEnded
+{
+    [_player removeForces];
+}
 
 - (void)setUpPhysicsLandscape
 {
@@ -122,5 +133,6 @@
     _parallaxNode.position = ccpAdd(_parallaxNode.position, ccpMult(backgroundScrollVel, delta));
     
 }
-
 @end
+
+

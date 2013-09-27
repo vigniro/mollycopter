@@ -12,7 +12,7 @@
 
 
 @class Player;
-@interface Game : CCScene
+@interface Game : CCScene <InputLayerDelegate>
 {
     CCLayerGradient *_skyLayer;
     InputLayer *_inputLayer;
