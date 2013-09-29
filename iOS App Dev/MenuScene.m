@@ -17,13 +17,17 @@
     self = [super init];
     if (self != nil)
     {
-        CCLabelTTF *label = [CCLabelTTF labelWithString:@"START" fontName:@"Arial" fontSize:48];
+        CCLabelTTF *label = [CCLabelTTF labelWithString:@"START\n MOLLYCOPTER" fontName:@"Arial" fontSize:40];
         CCMenuItemLabel *button = [CCMenuItemLabel itemWithLabel:label block:^(id sender)
         {
             Game *gameScene = [[Game alloc] init];
             [[CCDirector sharedDirector] replaceScene:gameScene];
         }];
-        button.position = ccp(200, 200);
+        
+        // ask director for the window size
+		CGSize size = [[CCDirector sharedDirector] winSize];
+        
+        button.position = ccp(size.width/2, size.height/2);
         
         CCMenu *menu = [CCMenu menuWithItems:button, nil];
         menu.position = CGPointZero;
