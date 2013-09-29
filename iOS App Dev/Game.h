@@ -9,9 +9,13 @@
 #import "cocos2d.h"
 #import <Foundation/Foundation.h>
 #import "InputLayer.h"
+#import "HudLayer.h"
 
 
 @class Player;
+@class Goal;
+
+
 @interface Game : CCScene <InputLayerDelegate>
 {
     CCLayerGradient *_skyLayer;
@@ -19,12 +23,15 @@
     CGSize _winSize;
     NSDictionary *_configuration;
     Player *_player;
+    Goal *_goal;
     ChipmunkSpace *_space;
     ccTime _accumulator;
+    CCParticleSystemQuad *_splashParticles;
     CCNode *_gameNode;
     CCParallaxNode *_parallaxNode;
     CGFloat _landscapeWidth;
     BOOL _playerFollow;
+    HudLayer *_hudLayer;
 }
 
 @end

@@ -6,8 +6,13 @@
 //  Copyright (c) 2013 Sveinn Fannar Kristjansson. All rights reserved.
 //
 
+#import "Game.h"
 #import "Player.h"
-#import "chipmunk.h"
+#import "InputLayer.h"
+#import "ChipmunkAutoGeometry.h"
+#import "Goal.h"
+#import "SimpleAudioEngine.h"
+
 
 @implementation Player
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
@@ -45,19 +50,22 @@
     return self;
 }
 
+
 - (void)flyWithForce
 {
     cpVect forceVector = cpvmult(ccp(0,1), self.chipmunkBody.mass * [_configuration[@"flyForce"] floatValue]);
     [self.chipmunkBody applyForce:forceVector offset:cpvzero];
 }
 
+
 - (void)removeForces
 {
-    NSLog(@"Force before reset: %@",NSStringFromCGPoint(self.chipmunkBody.body->f));
+    //NSLog(@"Force before reset: %@",NSStringFromCGPoint(self.chipmunkBody.body->f));
     //[self.chipmunkBody resetForces];
     self.chipmunkBody.body->f.y = 0;
-    NSLog(@"Force after reset: %@",NSStringFromCGPoint(self.chipmunkBody.body->f));
+    //NSLog(@"Force after reset: %@",NSStringFromCGPoint(self.chipmunkBody.body->f));
 }
+
 
 @end
 

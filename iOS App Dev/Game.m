@@ -9,6 +9,8 @@
 #import "Game.h"
 #import "Player.h"
 #import "ChipmunkAutoGeometry.h"
+#import "Goal.h"
+#import "SimpleAudioEngine.h"
 
 @implementation Game
 
@@ -29,11 +31,11 @@
         _space.gravity = ccp(0.0f, -gravity);
         
         // Register collision handler
-        //[_space setDefaultCollisionHandler:self
-        //                             begin:@selector(collisionBegan:space:)
-        //                          preSolve:nil
-        //                            postSolve:nil
-        //                          separate:nil];
+        [_space setDefaultCollisionHandler:self
+                                     begin:@selector(collisionBegan:space:)
+                                  preSolve:nil
+                                    postSolve:nil
+                                  separate:nil];
         
         // Setup world
         [self setupGraphicsLandscape];
@@ -44,10 +46,23 @@
         debugNode.visible = YES;
         [self addChild:debugNode];
         
+        // Add goal
+        _goal = [[Goal alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"goalPosition"])];
+        [_gameNode addChild:_goal];
+        
         // Create a input layer
         InputLayer *inputLayer = [[InputLayer alloc] init];
         inputLayer.delegate = self;
         [self addChild:inputLayer];
+        
+        // Setup particle system
+        _splashParticles = [CCParticleSystemQuad particleWithFile:@"WaterSplash.plist"];
+        _splashParticles.position = _goal.position;
+        [_splashParticles stopSystem];
+        [_gameNode addChild:_splashParticles];
+        
+        // Preload sound effects
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"Impact.wav"];
         
         // Add a tank
         NSString *playerPositionString = _configuration[@"playerPosition"];
@@ -58,10 +73,44 @@
         
         _playerFollow = YES;
         
+        //_hudLayer = [HudLayer node];
+        //[self addChild:_hudLayer];
+        
         // Your initilization code goes here
         [self scheduleUpdate];
     }
     return self;
+}
+
+- (bool)collisionBegan:(cpArbiter *)arbiter space:(ChipmunkSpace*)space {
+    cpBody *firstBody;
+    cpBody *secondBody;
+    cpArbiterGetBodies(arbiter, &firstBody, &secondBody);
+    
+    ChipmunkBody *firstChipmunkBody = firstBody->data;
+    ChipmunkBody *secondChipmunkBody = secondBody->data;
+    
+    if ((firstChipmunkBody == _player.chipmunkBody && secondChipmunkBody == _goal.chipmunkBody) ||
+        (firstChipmunkBody == _goal.chipmunkBody && secondChipmunkBody == _player.chipmunkBody)){
+        NSLog(@"TANK HIT GOAL :D:D:D xoxoxo");
+        
+        // Play sfx
+        [[SimpleAudioEngine sharedEngine] playEffect:@"Impact.wav" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
+        
+        // Remove physics body
+        /*[_space smartRemove:_player.chipmunkBody];
+        for (ChipmunkShape *shape in _player.chipmunkBody.shapes) {
+            [_space smartRemove:shape];
+        }
+        
+        // Remove player from cocos2d
+        [_player removeFromParentAndCleanup:YES];
+        
+        // Play particle effect
+        [_splashParticles resetSystem];*/
+    }
+    
+    return YES;
 }
 
 - (void)setupGraphicsLandscape
