@@ -14,11 +14,23 @@
 
 @implementation Game
 
++ (id)scene {
+    CCScene *scene = [CCScene node];
+    
+    HUDLayer *hud = [HUDLayer node];
+    [scene addChild:hud z:1];
+    
+    return scene;
+}
+
 - (id)init
 {
     self = [super init];
     if (self)
     {
+        _hud = [[HUDLayer alloc] init];
+        [self addChild:_hud z:1];
+        
         srandom(time(NULL));
         _winSize = [CCDirector sharedDirector].winSize;
         
@@ -92,7 +104,13 @@
 
 - (void)addPoint
 {
-    score = score + 1; //I think: score++; will also work.
+    score++; //I think: score++; will also work.
+    [scoreLabel setString:[NSString stringWithFormat:@"%d", score]];
+}
+
+- (void)deductPoint
+{
+    score -= 10; //I think: score++; will also work.
     [scoreLabel setString:[NSString stringWithFormat:@"%d", score]];
 }
 
@@ -108,6 +126,7 @@
     if ((firstChipmunkBody == _player.chipmunkBody && secondChipmunkBody == _goal.chipmunkBody) ||
         (firstChipmunkBody == _goal.chipmunkBody && secondChipmunkBody == _player.chipmunkBody)){
         NSLog(@"TANK HIT GOAL :D:D:D xoxoxo");
+        [self deductPoint];
         
         
         // Play sfx
@@ -124,6 +143,9 @@
         
         // Play particle effect
         [_splashParticles resetSystem];*/
+        
+        
+        //[_hud showRestartMenu:YES];
     }
     
     return YES;

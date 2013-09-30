@@ -9,7 +9,7 @@
 #import "cocos2d.h"
 #import <Foundation/Foundation.h>
 #import "InputLayer.h"
-#import "HudLayer.h"
+#import "HUDLayer.h"
 
 
 @class Player;
@@ -20,6 +20,7 @@
 {
     int score;
     CCLabelTTF *scoreLabel;
+    HUDLayer * _hud;
     
     CCLayerGradient *_skyLayer;
     InputLayer *_inputLayer;
@@ -34,7 +35,8 @@
     CCParallaxNode *_parallaxNode;
     CGFloat _landscapeWidth;
     BOOL _playerFollow;
-    HudLayer *_hudLayer;
 }
+
++ (id)scene;
 
 @end
