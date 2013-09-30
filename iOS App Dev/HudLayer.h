@@ -1,17 +1,16 @@
 //
-//  HudLayer.h
+//  HUDLayer.h
 //  iOS App Dev
 //
-//  Created by Solveig Sif Gudmundsdottir on 9/29/13.
+//  Created by Solveig Sif Gudmundsdottir on 9/30/13.
 //  Copyright (c) 2013 Sveinn Fannar Kristjansson. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "CCLayer.h"
 
-@interface HudLayer : CCLayer
+@interface HUDLayer : CCLayer {
+}
 
-- (id)initWithConfiguration:(NSDictionary *)configuration;
+- (void)showRestartMenu:(BOOL)won;
 
 @end

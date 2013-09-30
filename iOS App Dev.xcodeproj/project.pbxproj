@@ -165,6 +165,7 @@
 		9CAD33DA17F8CA4900705057 /* Impact.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD33D917F8CA4800705057 /* Impact.wav */; };
 		9CAD33DC17F8D14E00705057 /* WaterSplash.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD33DB17F8D14D00705057 /* WaterSplash.plist */; };
 		9CAD33E417F91F9000705057 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD33E317F91F9000705057 /* HUDLayer.m */; };
+		9CAD33E617F9C99C00705057 /* disney_enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD33E517F9C99C00705057 /* disney_enemy.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -519,6 +520,7 @@
 		9CAD33DB17F8D14D00705057 /* WaterSplash.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WaterSplash.plist; sourceTree = "<group>"; };
 		9CAD33E217F91F9000705057 /* HUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLayer.h; sourceTree = "<group>"; };
 		9CAD33E317F91F9000705057 /* HUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLayer.m; sourceTree = "<group>"; };
+		9CAD33E517F9C99C00705057 /* disney_enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disney_enemy.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -608,6 +610,7 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9CAD33E517F9C99C00705057 /* disney_enemy.png */,
 				9CAD33DB17F8D14D00705057 /* WaterSplash.plist */,
 				9CAD33D917F8CA4800705057 /* Impact.wav */,
 				9CAD33D717F8AF1B00705057 /* goal.png */,
@@ -1150,6 +1153,7 @@
 				9CAD33D817F8AF1B00705057 /* goal.png in Resources */,
 				9CAD33DA17F8CA4900705057 /* Impact.wav in Resources */,
 				9CAD33DC17F8D14E00705057 /* WaterSplash.plist in Resources */,
+				9CAD33E617F9C99C00705057 /* disney_enemy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

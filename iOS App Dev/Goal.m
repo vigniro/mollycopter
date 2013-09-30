@@ -13,7 +13,7 @@
 
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position
 {
-    self = [super initWithFile:@"goal.png"];
+    self = [super initWithFile:@"disney_enemy.png"];
     if (self) {
         CGSize size = self.textureRect.size;
         

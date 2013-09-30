@@ -84,14 +84,15 @@
         // Preload sound effects
         [[SimpleAudioEngine sharedEngine] preloadEffect:@"Impact.wav"];
         
-        // Add a tank
+        // Add a player
         NSString *playerPositionString = _configuration[@"playerPosition"];
         _player = [[Player alloc] initWithSpace:_space position:CGPointFromString(playerPositionString)];
         [_gameNode addChild:_player];
-        cpVect forceVector = cpvmult(ccp(1,0), 50000);
+        cpVect forceVector = cpvmult(ccp(1,0), [_configuration[@"playerLateralForce"] floatValue]);
         [_player.chipmunkBody applyForce:forceVector offset:cpvzero];
         
         _playerFollow = YES;
+        _gameOver = NO;
         
         //_hudLayer = [HudLayer node];
         //[self addChild:_hudLayer];
@@ -133,7 +134,7 @@
         [[SimpleAudioEngine sharedEngine] playEffect:@"Impact.wav" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
         
         // Remove physics body
-        /*[_space smartRemove:_player.chipmunkBody];
+        [_space smartRemove:_player.chipmunkBody];
         for (ChipmunkShape *shape in _player.chipmunkBody.shapes) {
             [_space smartRemove:shape];
         }
@@ -142,9 +143,9 @@
         [_player removeFromParentAndCleanup:YES];
         
         // Play particle effect
-        [_splashParticles resetSystem];*/
+        [_splashParticles resetSystem];
         
-        
+        _gameOver = YES;
         //[_hud showRestartMenu:YES];
     }
     
@@ -223,14 +224,18 @@
 - (void)touchStarted
 {
     NSLog(@"Touch started.");
-    //cpVect vector = cpv(0.0f, [_configuration[@"flyForce"] floatValue]);
-    [_player flyWithForce];
+    if (!_gameOver){
+        [_player flyWithForce];
+    }
 }
 
 - (void)touchEnded
 {
     NSLog(@"No longer touching.");
-    [_player removeForces];
+    if (!_gameOver) {
+        [_player removeForces];
+
+    }
 }
 
 - (void)update:(ccTime)delta

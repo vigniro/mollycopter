@@ -35,6 +35,7 @@
     CCParallaxNode *_parallaxNode;
     CGFloat _landscapeWidth;
     BOOL _playerFollow;
+    BOOL _gameOver;
 }
 
 + (id)scene;
