@@ -22,9 +22,9 @@
         CCMenuItemLabel *button = [CCMenuItemLabel itemWithLabel:label block:^(id sender)
         {
             Game *gameScene = [[Game alloc] init];
-            CutScene *cutScene = [[CutScene alloc] init];
-             [[CCDirector sharedDirector] replaceScene:cutScene];
-            //[[CCDirector sharedDirector] replaceScene:gameScene];
+            //CutScene *cutScene = [[CutScene alloc] init];
+            //[[CCDirector sharedDirector] replaceScene:cutScene];
+            [[CCDirector sharedDirector] replaceScene:gameScene];
         }];
         
         // ask director for the window size
