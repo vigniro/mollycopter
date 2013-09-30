@@ -166,6 +166,12 @@
 		9CAD33DC17F8D14E00705057 /* WaterSplash.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD33DB17F8D14D00705057 /* WaterSplash.plist */; };
 		9CAD33E417F91F9000705057 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD33E317F91F9000705057 /* HUDLayer.m */; };
 		9CAD33E617F9C99C00705057 /* disney_enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD33E517F9C99C00705057 /* disney_enemy.png */; };
+		9CAD33EF17FA295900705057 /* CCVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD33E917FA295900705057 /* CCVideoPlayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9CAD33F017FA295900705057 /* CCVideoPlayerImpliOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD33EC17FA295900705057 /* CCVideoPlayerImpliOS.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9CAD33F117FA295900705057 /* videoOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD33EE17FA295900705057 /* videoOverlayView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9CAD33F317FA2C7500705057 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CAD33F217FA2C7500705057 /* MediaPlayer.framework */; };
+		9CAD33F617FA2DE600705057 /* CutScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD33F517FA2DE500705057 /* CutScene.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9CAD33F817FA30B000705057 /* bollywood.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD33F717FA30AF00705057 /* bollywood.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -521,6 +527,16 @@
 		9CAD33E217F91F9000705057 /* HUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLayer.h; sourceTree = "<group>"; };
 		9CAD33E317F91F9000705057 /* HUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLayer.m; sourceTree = "<group>"; };
 		9CAD33E517F9C99C00705057 /* disney_enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disney_enemy.png; sourceTree = "<group>"; };
+		9CAD33E817FA295900705057 /* CCVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVideoPlayer.h; sourceTree = "<group>"; };
+		9CAD33E917FA295900705057 /* CCVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCVideoPlayer.m; sourceTree = "<group>"; };
+		9CAD33EB17FA295900705057 /* CCVideoPlayerImpliOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVideoPlayerImpliOS.h; sourceTree = "<group>"; };
+		9CAD33EC17FA295900705057 /* CCVideoPlayerImpliOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCVideoPlayerImpliOS.m; sourceTree = "<group>"; };
+		9CAD33ED17FA295900705057 /* videoOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videoOverlayView.h; sourceTree = "<group>"; };
+		9CAD33EE17FA295900705057 /* videoOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = videoOverlayView.m; sourceTree = "<group>"; };
+		9CAD33F217FA2C7500705057 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		9CAD33F417FA2DE500705057 /* CutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CutScene.h; sourceTree = "<group>"; };
+		9CAD33F517FA2DE500705057 /* CutScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CutScene.m; sourceTree = "<group>"; };
+		9CAD33F717FA30AF00705057 /* bollywood.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bollywood.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -528,6 +544,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CAD33F317FA2C7500705057 /* MediaPlayer.framework in Frameworks */,
 				0B3130E117E85D0D00D0829B /* ImageIO.framework in Frameworks */,
 				0B312F2E17E85CF200D0829B /* QuartzCore.framework in Frameworks */,
 				0B312F3017E85CF200D0829B /* OpenGLES.framework in Frameworks */,
@@ -549,6 +566,7 @@
 		0B312F2117E85CF200D0829B = {
 			isa = PBXGroup;
 			children = (
+				9CAD33F217FA2C7500705057 /* MediaPlayer.framework */,
 				0B312F4117E85CF200D0829B /* iOS App Dev */,
 				0B312F2C17E85CF200D0829B /* Frameworks */,
 				0B312F2B17E85CF200D0829B /* Products */,
@@ -584,10 +602,14 @@
 		0B312F4117E85CF200D0829B /* iOS App Dev */ = {
 			isa = PBXGroup;
 			children = (
+				9CAD33F717FA30AF00705057 /* bollywood.mp4 */,
+				9CAD33E717FA291700705057 /* CCVideoPlayer */,
 				36839A6517F4920800F29FC1 /* Player.h */,
 				36839A6617F4920800F29FC1 /* Player.m */,
 				0B3130D217E85CF400D0829B /* AppDelegate.h */,
 				0B3130D317E85CF400D0829B /* AppDelegate.m */,
+				9CAD33F417FA2DE500705057 /* CutScene.h */,
+				9CAD33F517FA2DE500705057 /* CutScene.m */,
 				36839A9417F4EB8E00F29FC1 /* InputLayer.h */,
 				36839A9517F4EB8E00F29FC1 /* InputLayer.m */,
 				9CAD33D417F8AF0300705057 /* Goal.h */,
@@ -1073,6 +1095,27 @@
 			path = constraints;
 			sourceTree = "<group>";
 		};
+		9CAD33E717FA291700705057 /* CCVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				9CAD33EA17FA295900705057 /* iOS */,
+				9CAD33E817FA295900705057 /* CCVideoPlayer.h */,
+				9CAD33E917FA295900705057 /* CCVideoPlayer.m */,
+			);
+			name = CCVideoPlayer;
+			sourceTree = "<group>";
+		};
+		9CAD33EA17FA295900705057 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9CAD33EB17FA295900705057 /* CCVideoPlayerImpliOS.h */,
+				9CAD33EC17FA295900705057 /* CCVideoPlayerImpliOS.m */,
+				9CAD33ED17FA295900705057 /* videoOverlayView.h */,
+				9CAD33EE17FA295900705057 /* videoOverlayView.m */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1154,6 +1197,7 @@
 				9CAD33DA17F8CA4900705057 /* Impact.wav in Resources */,
 				9CAD33DC17F8D14E00705057 /* WaterSplash.plist in Resources */,
 				9CAD33E617F9C99C00705057 /* disney_enemy.png in Resources */,
+				9CAD33F817FA30B000705057 /* bollywood.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1281,6 +1325,10 @@
 				9CAD33CA17F87B6200705057 /* MenuScene.m in Sources */,
 				9CAD33D617F8AF0600705057 /* Goal.m in Sources */,
 				9CAD33E417F91F9000705057 /* HUDLayer.m in Sources */,
+				9CAD33EF17FA295900705057 /* CCVideoPlayer.m in Sources */,
+				9CAD33F017FA295900705057 /* CCVideoPlayerImpliOS.m in Sources */,
+				9CAD33F117FA295900705057 /* videoOverlayView.m in Sources */,
+				9CAD33F617FA2DE600705057 /* CutScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
