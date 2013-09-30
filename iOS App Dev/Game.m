@@ -43,12 +43,20 @@
         
         // Create debug node
         CCPhysicsDebugNode *debugNode = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
-        debugNode.visible = YES;
+        debugNode.visible = NO;
         [self addChild:debugNode];
         
         // Add goal
         _goal = [[Goal alloc] initWithSpace:_space position:CGPointFromString(_configuration[@"goalPosition"])];
         [_gameNode addChild:_goal];
+        
+        //Set the score to zero.
+        score = 0;
+        
+        //Create and add the score label as a child.
+        scoreLabel = [CCLabelTTF labelWithString:@"0" fontName:@"Marker Felt" fontSize:24];
+        scoreLabel.position = ccp(30, 290);
+        [self addChild:scoreLabel z:1];
         
         // Create a input layer
         InputLayer *inputLayer = [[InputLayer alloc] init];
@@ -82,6 +90,12 @@
     return self;
 }
 
+- (void)addPoint
+{
+    score = score + 1; //I think: score++; will also work.
+    [scoreLabel setString:[NSString stringWithFormat:@"%d", score]];
+}
+
 - (bool)collisionBegan:(cpArbiter *)arbiter space:(ChipmunkSpace*)space {
     cpBody *firstBody;
     cpBody *secondBody;
@@ -89,10 +103,12 @@
     
     ChipmunkBody *firstChipmunkBody = firstBody->data;
     ChipmunkBody *secondChipmunkBody = secondBody->data;
+    [self addPoint];
     
     if ((firstChipmunkBody == _player.chipmunkBody && secondChipmunkBody == _goal.chipmunkBody) ||
         (firstChipmunkBody == _goal.chipmunkBody && secondChipmunkBody == _player.chipmunkBody)){
         NSLog(@"TANK HIT GOAL :D:D:D xoxoxo");
+        
         
         // Play sfx
         [[SimpleAudioEngine sharedEngine] playEffect:@"Impact.wav" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];

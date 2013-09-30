@@ -18,6 +18,9 @@
 
 @interface Game : CCScene <InputLayerDelegate>
 {
+    int score;
+    CCLabelTTF *scoreLabel;
+    
     CCLayerGradient *_skyLayer;
     InputLayer *_inputLayer;
     CGSize _winSize;
