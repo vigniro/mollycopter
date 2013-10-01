@@ -11,7 +11,7 @@
 @implementation Coin
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
 {
-    self = [super initWithFile:@"mdmagold.png"];
+    self = [super initWithFile:@"mdmagold-30.png"];
     if (self)
     {
         _space = space;

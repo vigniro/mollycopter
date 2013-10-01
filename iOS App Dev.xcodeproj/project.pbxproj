@@ -182,6 +182,11 @@
 		9CAD33F617FA2DE600705057 /* CutScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD33F517FA2DE500705057 /* CutScene.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9CAD33F817FA30B000705057 /* bollywood.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD33F717FA30AF00705057 /* bollywood.mp4 */; };
 		9CAD340F17FA6B0500705057 /* mollycopter.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD340E17FA6B0500705057 /* mollycopter.mp4 */; };
+		9CAD341317FAF84200705057 /* mdmagold-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD341017FAF84200705057 /* mdmagold-20.png */; };
+		9CAD341417FAF84200705057 /* mdmagold-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD341117FAF84200705057 /* mdmagold-30.png */; };
+		9CAD341517FAF84200705057 /* mdmagold-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD341217FAF84200705057 /* mdmagold-40.png */; };
+		9CAD341817FAF85600705057 /* sledgehammer-75.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD341617FAF85600705057 /* sledgehammer-75.png */; };
+		9CAD341917FAF85600705057 /* sledgehammer-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD341717FAF85600705057 /* sledgehammer-100.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -559,6 +564,11 @@
 		9CAD33F517FA2DE500705057 /* CutScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CutScene.m; sourceTree = "<group>"; };
 		9CAD33F717FA30AF00705057 /* bollywood.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bollywood.mp4; sourceTree = "<group>"; };
 		9CAD340E17FA6B0500705057 /* mollycopter.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mollycopter.mp4; sourceTree = "<group>"; };
+		9CAD341017FAF84200705057 /* mdmagold-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mdmagold-20.png"; sourceTree = "<group>"; };
+		9CAD341117FAF84200705057 /* mdmagold-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mdmagold-30.png"; sourceTree = "<group>"; };
+		9CAD341217FAF84200705057 /* mdmagold-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mdmagold-40.png"; sourceTree = "<group>"; };
+		9CAD341617FAF85600705057 /* sledgehammer-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sledgehammer-75.png"; sourceTree = "<group>"; };
+		9CAD341717FAF85600705057 /* sledgehammer-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sledgehammer-100.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -624,7 +634,6 @@
 		0B312F4117E85CF200D0829B /* iOS App Dev */ = {
 			isa = PBXGroup;
 			children = (
-				368AD8E717FA8884001989F2 /* sledgehammer.png */,
 				368AD8D717FA5BA8001989F2 /* Fonts */,
 				9CAD33E717FA291700705057 /* CCVideoPlayer */,
 				36839A6517F4920800F29FC1 /* Player.h */,
@@ -660,6 +669,12 @@
 			isa = PBXGroup;
 			children = (
 				368AD8E017FA6687001989F2 /* mdma.png */,
+				9CAD341617FAF85600705057 /* sledgehammer-75.png */,
+				9CAD341717FAF85600705057 /* sledgehammer-100.png */,
+				9CAD341017FAF84200705057 /* mdmagold-20.png */,
+				9CAD341117FAF84200705057 /* mdmagold-30.png */,
+				9CAD341217FAF84200705057 /* mdmagold-40.png */,
+				368AD8E717FA8884001989F2 /* sledgehammer.png */,
 				368AD8E117FA6687001989F2 /* mdmagold.png */,
 				9CAD340E17FA6B0500705057 /* mollycopter.mp4 */,
 				9CAD33E517F9C99C00705057 /* disney_enemy.png */,
@@ -1248,6 +1263,11 @@
 				9CAD33E617F9C99C00705057 /* disney_enemy.png in Resources */,
 				9CAD33F817FA30B000705057 /* bollywood.mp4 in Resources */,
 				9CAD340F17FA6B0500705057 /* mollycopter.mp4 in Resources */,
+				9CAD341317FAF84200705057 /* mdmagold-20.png in Resources */,
+				9CAD341417FAF84200705057 /* mdmagold-30.png in Resources */,
+				9CAD341517FAF84200705057 /* mdmagold-40.png in Resources */,
+				9CAD341817FAF85600705057 /* sledgehammer-75.png in Resources */,
+				9CAD341917FAF85600705057 /* sledgehammer-100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
