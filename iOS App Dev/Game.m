@@ -9,6 +9,7 @@
 #import "Game.h"
 #import "Player.h"
 #import "Coin.h"
+#import "Sledgehammer.h"
 #import "ChipmunkAutoGeometry.h"
 #import "Goal.h"
 #import "SimpleAudioEngine.h"
@@ -95,18 +96,26 @@
         _playerFollow = YES;
         _gameOver = NO;
         
+        
+        // Add coins
         NSMutableArray *coinArray = [[NSMutableArray alloc] init];
         _coinArray = coinArray;
         
-
-        // Add coins
         for (int i = 0; i <= 5; i++){
             Coin *coin = [[Coin alloc] initWithSpace:_space position:ccp(i*200,200)];
             [_gameNode addChild:coin];
             [_coinArray addObject:coin];
         }
         
+        // Add hammers
+        NSMutableArray *hammerArray = [[NSMutableArray alloc] init];
+        _hammerArray = hammerArray;
         
+        for (int i = 0; i <= 2; i++){
+            Sledgehammer *hammer = [[Sledgehammer alloc] initWithSpace:_space position:ccp(i*500,200)];
+            [_gameNode addChild:hammer];
+            [_hammerArray addObject:hammer];
+        }
         
         
         
@@ -134,6 +143,8 @@
 - (bool)collisionBegan:(cpArbiter *)arbiter space:(ChipmunkSpace*)space {
     cpBody *firstBody;
     cpBody *secondBody;
+    Coin *removeCoin;
+    Sledgehammer *removeHammer;
     cpArbiterGetBodies(arbiter, &firstBody, &secondBody);
     
     ChipmunkBody *firstChipmunkBody = firstBody->data;
@@ -142,7 +153,7 @@
     
     if ((firstChipmunkBody == _player.chipmunkBody && secondChipmunkBody == _goal.chipmunkBody) ||
         (firstChipmunkBody == _goal.chipmunkBody && secondChipmunkBody == _player.chipmunkBody)){
-        NSLog(@"TANK HIT GOAL :D:D:D xoxoxo");
+        NSLog(@"PLayer finished game.");
         [self addPoint:1000];
         
         
@@ -165,7 +176,6 @@
         [_hud showRestartMenu:YES];
     }
     
-    Coin *removeCoin;
     
     for(Coin *coin in _coinArray){
         if ((firstChipmunkBody == _player.chipmunkBody && secondChipmunkBody == coin.chipmunkBody) ||
@@ -192,7 +202,39 @@
         }
     }
     
+    
+    for(Sledgehammer *hammer in _hammerArray){
+        if ((firstChipmunkBody == _player.chipmunkBody && secondChipmunkBody == hammer.chipmunkBody) ||
+            (firstChipmunkBody == hammer.chipmunkBody && secondChipmunkBody == _player.chipmunkBody)){
+            NSLog(@"Crashed into a hammer.");
+            //[self addPoint:100];
+            
+            // Play sfx
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"Impact.wav" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
+            
+            // Remove physics body
+            //[_space smartRemove:_coin.chipmunkBody];
+            for (ChipmunkShape *shape in hammer.chipmunkBody.shapes) {
+                [_space smartRemove:shape];
+            }
+            
+            cpVect impulseVector = cpvsub(_player.position, hammer.position);
+            cpVect normalisedVector = cpvnormalize(impulseVector);
+            [_player flyWithImpulse:[_configuration[@"hammerImpulse"] floatValue] vector:normalisedVector];
+            
+            // Remove coin from cocos2d
+            [hammer removeFromParentAndCleanup:YES];
+            
+            removeHammer = hammer;
+            
+            // Play particle effect
+            [_splashParticles resetSystem];
+        }
+    }
+    
+    
     [_coinArray removeObject:removeCoin];
+    [_hammerArray removeObject:removeHammer];
 
     
     

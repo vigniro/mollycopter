@@ -39,6 +39,7 @@
     BOOL _gameOver;
     Coin *_coin;
     NSMutableArray *_coinArray;
+    NSMutableArray *_hammerArray;
 }
 
 + (id)scene;

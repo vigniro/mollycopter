@@ -61,11 +61,15 @@
 - (void)removeForces
 {
     //NSLog(@"Force before reset: %@",NSStringFromCGPoint(self.chipmunkBody.body->f));
-    //[self.chipmunkBody resetForces];
     self.chipmunkBody.body->f.y = 0;
     //NSLog(@"Force after reset: %@",NSStringFromCGPoint(self.chipmunkBody.body->f));
 }
 
+- (void)flyWithImpulse:(CGFloat)power vector:(cpVect)vector;
+{
+    cpVect impulseVector = cpvmult(vector, power);
+    [self.chipmunkBody applyImpulse:impulseVector offset:cpvzero];
+}
 
 @end
 

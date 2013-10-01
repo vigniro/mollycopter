@@ -18,6 +18,7 @@
 
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
 - (void)flyWithForce;
+- (void)flyWithImpulse:(CGFloat)power vector:(cpVect)vector;
 - (void)removeForces;
 
 //@property (nonatomic, strong) CGFloat flyForce;§§
