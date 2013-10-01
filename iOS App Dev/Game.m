@@ -176,9 +176,6 @@
             [coin removeFromParentAndCleanup:YES];
             
             removeCoin = coin;
-            
-            // Play particle effect
-            //[_splashParticles resetSystem];
         }
     }
     

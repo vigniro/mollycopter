@@ -22,7 +22,6 @@
             
             ChipmunkBody *body = [ChipmunkBody staticBody];
             body.pos = position;
-            //ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:size.width height:size.height];
             ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:size.width/2 offset:cpv(0,0)];
             shape.sensor = YES;
 
