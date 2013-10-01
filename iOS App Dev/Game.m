@@ -23,7 +23,6 @@
     
     return scene;
 }
-
 - (id)init
 {
     self = [super init];

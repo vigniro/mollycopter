@@ -10,4 +10,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Coin : CCPhysicsSprite
+{
+    ChipmunkSpace *_space;
+}
+
+- (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
 @end
+
