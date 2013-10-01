@@ -31,14 +31,17 @@
 {
     self = [super init];
     if (self) {
-        CCLabelTTF *label = [CCLabelTTF labelWithString:@"Play video" fontName:@"Marker Felt" fontSize:64];
+        [CCVideoPlayer playMovieWithFile:@"mollycopter.mp4"];
+        [CCVideoPlayer setDelegate: self];
+        
+        /*CCLabelTTF *label = [CCLabelTTF labelWithString:@"Play video" fontName:@"Marker Felt" fontSize:64];
         CCMenuItemLabel *labelItem = [CCMenuItemLabel itemWithLabel:label target:self selector:@selector(testCCVideoPlayer)];
         
         CCMenu *menu = [CCMenu menuWithItems:labelItem, nil];
         [menu alignItemsHorizontally];
         [self addChild:menu];
         
-        [CCVideoPlayer setDelegate: self];
+        [CCVideoPlayer setDelegate: self];*/
         
         /* CCLabelTTF *label = [CCLabelTTF labelWithString:@"Video" fontName:@"Arial" fontSize:40];
         CCMenuItemLabel *button = [CCMenuItemLabel itemWithLabel:label block:^(id sender)
