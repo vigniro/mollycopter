@@ -174,7 +174,7 @@
         [_splashParticles resetSystem];
         
         _gameOver = YES;
-        [_hud showRestartMenu:YES];
+        [_hud showRestartMenu];
     }
     
     
