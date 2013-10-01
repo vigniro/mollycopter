@@ -177,6 +177,7 @@
 		9CAD33F317FA2C7500705057 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CAD33F217FA2C7500705057 /* MediaPlayer.framework */; };
 		9CAD33F617FA2DE600705057 /* CutScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD33F517FA2DE500705057 /* CutScene.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9CAD33F817FA30B000705057 /* bollywood.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD33F717FA30AF00705057 /* bollywood.mp4 */; };
+		9CAD340F17FA6B0500705057 /* mollycopter.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD340E17FA6B0500705057 /* mollycopter.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -548,6 +549,7 @@
 		9CAD33F417FA2DE500705057 /* CutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CutScene.h; sourceTree = "<group>"; };
 		9CAD33F517FA2DE500705057 /* CutScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CutScene.m; sourceTree = "<group>"; };
 		9CAD33F717FA30AF00705057 /* bollywood.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bollywood.mp4; sourceTree = "<group>"; };
+		9CAD340E17FA6B0500705057 /* mollycopter.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mollycopter.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -614,7 +616,6 @@
 			isa = PBXGroup;
 			children = (
 				368AD8D717FA5BA8001989F2 /* Fonts */,
-				9CAD33F717FA30AF00705057 /* bollywood.mp4 */,
 				9CAD33E717FA291700705057 /* CCVideoPlayer */,
 				36839A6517F4920800F29FC1 /* Player.h */,
 				36839A6617F4920800F29FC1 /* Player.m */,
@@ -646,10 +647,12 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9CAD340E17FA6B0500705057 /* mollycopter.mp4 */,
 				9CAD33E517F9C99C00705057 /* disney_enemy.png */,
 				9CAD33DB17F8D14D00705057 /* WaterSplash.plist */,
 				9CAD33D917F8CA4800705057 /* Impact.wav */,
 				9CAD33D717F8AF1B00705057 /* goal.png */,
+				9CAD33F717FA30AF00705057 /* bollywood.mp4 */,
 				9CAD33C617F63C5E00705057 /* fullmoonsingle.png */,
 				9CAD33C417F634FA00705057 /* skylayerClean2.png */,
 				9CAD33C217F62EF800705057 /* brickWall.png */,
@@ -1227,6 +1230,7 @@
 				9CAD33DC17F8D14E00705057 /* WaterSplash.plist in Resources */,
 				9CAD33E617F9C99C00705057 /* disney_enemy.png in Resources */,
 				9CAD33F817FA30B000705057 /* bollywood.mp4 in Resources */,
+				9CAD340F17FA6B0500705057 /* mollycopter.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1433,7 +1437,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS App Dev/Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"iOS App Dev/libs/kazmath/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"iOS App Dev/libs/kazmath/include\"",
+				);
 				INFOPLIST_FILE = "iOS App Dev/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -1458,7 +1464,9 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOS App Dev/Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"iOS App Dev/libs/kazmath/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"iOS App Dev/libs/kazmath/include\"",
+				);
 				INFOPLIST_FILE = "iOS App Dev/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (

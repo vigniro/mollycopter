@@ -7,6 +7,8 @@
 //
 
 #import "CutScene.h"
+#import "Game.h"
+#import "MenuScene.h"
 
 @implementation CutScene
 
@@ -37,17 +39,43 @@
         [self addChild:menu];
         
         [CCVideoPlayer setDelegate: self];
+        
+        /* CCLabelTTF *label = [CCLabelTTF labelWithString:@"Video" fontName:@"Arial" fontSize:40];
+        CCMenuItemLabel *button = [CCMenuItemLabel itemWithLabel:label block:^(id sender)
+                                   {
+                                       [CCVideoPlayer playMovieWithFile:@"mollycopter.mp4"];
+                                       [CCVideoPlayer setDelegate: self];
+                                   }];
+        
+        // ask director for the window size
+        CGSize size = [[CCDirector sharedDirector] winSize];
+        
+        button.position = ccp(size.width/2, size.height/2);
+        
+        CCMenu *menu = [CCMenu menuWithItems:button, nil];
+        menu.position = CGPointZero;
+        [self addChild:menu];*/
     }
     return self;
 }
 
 - (void) testCCVideoPlayer
 {
-    [CCVideoPlayer playMovieWithFile:@"bollywood.mp4"];
+    [CCVideoPlayer playMovieWithFile:@"mollycopter.mp4"];
+}
+
+- (void) switchScene {
+    Game *gameScene = [[Game alloc] init];
+    [[CCDirector sharedDirector] replaceScene:gameScene];
+    
+    /*MenuScene *menuScene = [[MenuScene alloc] init];
+    [[CCDirector sharedDirector] replaceScene:menuScene];*/
 }
 
 - (void) moviePlaybackFinished {
     [[CCDirector sharedDirector] startAnimation];
+    
+    [self performSelector:@selector(switchScene)];
 }
 
 - (void) movieStartsPlaying {

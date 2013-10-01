@@ -21,10 +21,11 @@
         CCLabelTTF *label = [CCLabelTTF labelWithString:@"START\n MOLLYCOPTER" fontName:@"Arial" fontSize:40];
         CCMenuItemLabel *button = [CCMenuItemLabel itemWithLabel:label block:^(id sender)
         {
-            Game *gameScene = [[Game alloc] init];
-            //CutScene *cutScene = [[CutScene alloc] init];
-            //[[CCDirector sharedDirector] replaceScene:cutScene];
-            [[CCDirector sharedDirector] replaceScene:gameScene];
+            CutScene *cutScene = [[CutScene alloc] init];
+            [[CCDirector sharedDirector] replaceScene:cutScene];
+            
+            /*Game *gameScene = [[Game alloc] init];
+            [[CCDirector sharedDirector] replaceScene:gameScene];*/
         }];
         
         // ask director for the window size
