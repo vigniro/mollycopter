@@ -11,6 +11,7 @@
 @interface HUDLayer : CCLayer {
 }
 
-- (void)showRestartMenu:(BOOL)won;
+- (void)showRestartMenu;
+
 
 @end
