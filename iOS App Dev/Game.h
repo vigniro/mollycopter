@@ -20,6 +20,7 @@
 @interface Game : CCScene <InputLayerDelegate>
 {
     int score;
+    int distanceScore;
     CCLabelTTF *scoreLabel;
     HUDLayer * _hud;
     

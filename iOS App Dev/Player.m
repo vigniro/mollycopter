@@ -31,7 +31,7 @@
             cpFloat mass = size.width * size.height;
             cpFloat moment = cpMomentForBox(mass, size.width, size.height);
             
-            ChipmunkBody *body = [ChipmunkBody bodyWithMass:mass andMoment:moment];
+            ChipmunkBody *body = [ChipmunkBody bodyWithMass:mass andMoment:moment*10];
             body.pos = position;
             ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:size.width height:size.height];
             

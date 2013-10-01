@@ -57,7 +57,7 @@
         
         // Create debug node
         CCPhysicsDebugNode *debugNode = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
-        debugNode.visible = NO;
+        debugNode.visible = YES;
         [self addChild:debugNode];
         
         // Add goal
@@ -66,6 +66,7 @@
         
         //Set the score to zero.
         score = 0;
+        distanceScore = 0;
         
         //Create and add the score label as a child.
         scoreLabel = [CCLabelTTF labelWithString:@"0" fontName:@"Marker Felt" fontSize:24];
@@ -131,13 +132,13 @@
 - (void)addPoint:(int)points
 {
     score += points;
-    [scoreLabel setString:[NSString stringWithFormat:@"%d", score]];
+    [scoreLabel setString:[NSString stringWithFormat:@"%d", score+distanceScore]];
 }
 
 - (void)deductPoint:(int)points
 {
     score -= points;
-    [scoreLabel setString:[NSString stringWithFormat:@"%d", score]];
+    [scoreLabel setString:[NSString stringWithFormat:@"%d", score+distanceScore]];
 }
 
 - (bool)collisionBegan:(cpArbiter *)arbiter space:(ChipmunkSpace*)space {
@@ -228,6 +229,7 @@
             removeHammer = hammer;
             
             // Play particle effect
+            _splashParticles.position = hammer.position;
             [_splashParticles resetSystem];
         }
     }
@@ -346,6 +348,11 @@
         {
             _parallaxNode.position = ccp(-(_player.position.x - (_winSize.width / 2)), 0);
         }
+    }
+    
+    if (distanceScore < _player.position.x){
+        distanceScore = _player.position.x;
+        [scoreLabel setString:[NSString stringWithFormat:@"%d", score+distanceScore]];
     }
 }
 @end
