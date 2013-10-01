@@ -146,7 +146,7 @@
     
     ChipmunkBody *firstChipmunkBody = firstBody->data;
     ChipmunkBody *secondChipmunkBody = secondBody->data;
-    [self deductPoint:10];
+    [self deductPoint:30];
     
     if ((firstChipmunkBody == _player.chipmunkBody && secondChipmunkBody == _goal.chipmunkBody) ||
         (firstChipmunkBody == _goal.chipmunkBody && secondChipmunkBody == _player.chipmunkBody)){
@@ -155,7 +155,7 @@
         
         
         // Play sfx
-        [[SimpleAudioEngine sharedEngine] playEffect:@"sledgehammer.mp3" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
+        [[SimpleAudioEngine sharedEngine] playEffect:@"sledgehammer.mp3"];
         
         // Remove physics body
         [_space smartRemove:_player.chipmunkBody];
@@ -181,7 +181,7 @@
             [self addPoint:100];
             
             // Play sfx
-            [[SimpleAudioEngine sharedEngine] playEffect:@"coin.mp3" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
+            [[SimpleAudioEngine sharedEngine] playEffect:@"coin.mp3"];
             
             // Remove physics body
             //[_space smartRemove:_coin.chipmunkBody];
@@ -207,7 +207,7 @@
             //[self addPoint:100];
             
             // Play sfx
-            [[SimpleAudioEngine sharedEngine] playEffect:@"sledgehammer.mp3" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
+            [[SimpleAudioEngine sharedEngine] playEffect:@"sledgehammer.mp3"];
             
             // Remove physics body
             //[_space smartRemove:_coin.chipmunkBody];

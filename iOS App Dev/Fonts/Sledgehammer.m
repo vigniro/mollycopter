@@ -11,7 +11,7 @@
 @implementation Sledgehammer
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
 {
-    self = [super initWithFile:@"sledgehammer-75.png"];
+    self = [super initWithFile:@"sledgehammer-50.png"];
     if (self)
     {
         _space = space;

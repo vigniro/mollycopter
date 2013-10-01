@@ -189,6 +189,7 @@
 		9CAD341917FAF85600705057 /* sledgehammer-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD341717FAF85600705057 /* sledgehammer-100.png */; };
 		9CAD341D17FB03CE00705057 /* coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD341C17FB03CE00705057 /* coin.mp3 */; };
 		9CAD341F17FB055C00705057 /* sledgehammer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD341E17FB055C00705057 /* sledgehammer.mp3 */; };
+		9CAD342117FB17FE00705057 /* sledgehammer-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD342017FB17FE00705057 /* sledgehammer-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -573,6 +574,7 @@
 		9CAD341717FAF85600705057 /* sledgehammer-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sledgehammer-100.png"; sourceTree = "<group>"; };
 		9CAD341C17FB03CE00705057 /* coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin.mp3; sourceTree = "<group>"; };
 		9CAD341E17FB055C00705057 /* sledgehammer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sledgehammer.mp3; sourceTree = "<group>"; };
+		9CAD342017FB17FE00705057 /* sledgehammer-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sledgehammer-50.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -672,6 +674,7 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9CAD342017FB17FE00705057 /* sledgehammer-50.png */,
 				9CAD341E17FB055C00705057 /* sledgehammer.mp3 */,
 				9CAD341C17FB03CE00705057 /* coin.mp3 */,
 				368AD8E017FA6687001989F2 /* mdma.png */,
@@ -1276,6 +1279,7 @@
 				9CAD341917FAF85600705057 /* sledgehammer-100.png in Resources */,
 				9CAD341D17FB03CE00705057 /* coin.mp3 in Resources */,
 				9CAD341F17FB055C00705057 /* sledgehammer.mp3 in Resources */,
+				9CAD342117FB17FE00705057 /* sledgehammer-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
