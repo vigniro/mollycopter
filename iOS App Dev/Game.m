@@ -178,7 +178,7 @@
         if ((firstChipmunkBody == _player.chipmunkBody && secondChipmunkBody == coin.chipmunkBody) ||
             (firstChipmunkBody == coin.chipmunkBody && secondChipmunkBody == _player.chipmunkBody)){
             NSLog(@"Collected coin.");
-            [self addPoint:100];
+            [self addPoint:250];
             
             // Play sfx
             [[SimpleAudioEngine sharedEngine] playEffect:@"coin.mp3"];
