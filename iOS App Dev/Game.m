@@ -98,16 +98,7 @@
         _playerFollow = YES;
         _gameOver = NO;
         
-        
-        // Add coins
-        NSMutableArray *coinArray = [[NSMutableArray alloc] init];
-        _coinArray = coinArray;
-        
-        for (int i = 0; i <= 5; i++){
-            Coin *coin = [[Coin alloc] initWithSpace:_space position:ccp(i*200,200)];
-            [_gameNode addChild:coin];
-            [_coinArray addObject:coin];
-        }
+        [self createCoins];
         
         // Add hammers
         NSMutableArray *hammerArray = [[NSMutableArray alloc] init];
@@ -213,6 +204,7 @@
             //[_space smartRemove:_coin.chipmunkBody];
             for (ChipmunkShape *shape in hammer.chipmunkBody.shapes) {
                 [_space smartRemove:shape];
+                
             }
             
             cpVect impulseVector = cpvsub(_player.position, hammer.position);
@@ -230,12 +222,9 @@
         }
     }
     
-    
     [_coinArray removeObject:removeCoin];
     [_hammerArray removeObject:removeHammer];
 
-    
-    
     return YES;
 }
 
@@ -307,6 +296,19 @@
         shape.friction = 0.2f;
         [_space addShape:shape];
     }
+}
+
+- (void)createCoins
+{
+    // Add coins
+    NSMutableArray *coinArray = [[NSMutableArray alloc] init];
+    _coinArray = coinArray;
+    
+    Coin *coin = [[Coin alloc] initWithSpace:_space position:ccp(250,160)];
+    [_gameNode addChild:coin];
+    [_coinArray addObject:coin];
+    
+
 }
 
 - (void)touchStarted
