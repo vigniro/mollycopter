@@ -13,6 +13,6 @@
 	<key>flyForce</key>
 	<real>1000</real>
 	<key>playerPosition</key>
-	<string>{100,160}</string>
+	<string>{150,160}</string>
 </dict>
 </plist>
