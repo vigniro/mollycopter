@@ -85,7 +85,8 @@
         [_gameNode addChild:_splashParticles];
         
         // Preload sound effects
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"Impact.wav"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"coin.mp3"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"sledgehammer.mp3"];
         
         // Add a player
         NSString *playerPositionString = _configuration[@"playerPosition"];
@@ -117,11 +118,6 @@
             [_gameNode addChild:hammer];
             [_hammerArray addObject:hammer];
         }
-        
-        
-        
-        //_hud = [HUDLayer node];
-        //[self addChild:_hud];
         
         // Your initilization code goes here
         [self scheduleUpdate];
@@ -159,7 +155,7 @@
         
         
         // Play sfx
-        [[SimpleAudioEngine sharedEngine] playEffect:@"Impact.wav" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
+        [[SimpleAudioEngine sharedEngine] playEffect:@"sledgehammer.mp3" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
         
         // Remove physics body
         [_space smartRemove:_player.chipmunkBody];
@@ -185,7 +181,7 @@
             [self addPoint:100];
             
             // Play sfx
-            //[[SimpleAudioEngine sharedEngine] playEffect:@"Impact.wav" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
+            [[SimpleAudioEngine sharedEngine] playEffect:@"coin.mp3" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
             
             // Remove physics body
             //[_space smartRemove:_coin.chipmunkBody];
@@ -211,7 +207,7 @@
             //[self addPoint:100];
             
             // Play sfx
-            //[[SimpleAudioEngine sharedEngine] playEffect:@"Impact.wav" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
+            [[SimpleAudioEngine sharedEngine] playEffect:@"sledgehammer.mp3" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
             
             // Remove physics body
             //[_space smartRemove:_coin.chipmunkBody];

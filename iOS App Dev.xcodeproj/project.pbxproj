@@ -187,6 +187,8 @@
 		9CAD341517FAF84200705057 /* mdmagold-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD341217FAF84200705057 /* mdmagold-40.png */; };
 		9CAD341817FAF85600705057 /* sledgehammer-75.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD341617FAF85600705057 /* sledgehammer-75.png */; };
 		9CAD341917FAF85600705057 /* sledgehammer-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD341717FAF85600705057 /* sledgehammer-100.png */; };
+		9CAD341D17FB03CE00705057 /* coin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD341C17FB03CE00705057 /* coin.mp3 */; };
+		9CAD341F17FB055C00705057 /* sledgehammer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9CAD341E17FB055C00705057 /* sledgehammer.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -569,6 +571,8 @@
 		9CAD341217FAF84200705057 /* mdmagold-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mdmagold-40.png"; sourceTree = "<group>"; };
 		9CAD341617FAF85600705057 /* sledgehammer-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sledgehammer-75.png"; sourceTree = "<group>"; };
 		9CAD341717FAF85600705057 /* sledgehammer-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sledgehammer-100.png"; sourceTree = "<group>"; };
+		9CAD341C17FB03CE00705057 /* coin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin.mp3; sourceTree = "<group>"; };
+		9CAD341E17FB055C00705057 /* sledgehammer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sledgehammer.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -668,6 +672,8 @@
 		0B312F4217E85CF200D0829B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9CAD341E17FB055C00705057 /* sledgehammer.mp3 */,
+				9CAD341C17FB03CE00705057 /* coin.mp3 */,
 				368AD8E017FA6687001989F2 /* mdma.png */,
 				9CAD341617FAF85600705057 /* sledgehammer-75.png */,
 				9CAD341717FAF85600705057 /* sledgehammer-100.png */,
@@ -1268,6 +1274,8 @@
 				9CAD341517FAF84200705057 /* mdmagold-40.png in Resources */,
 				9CAD341817FAF85600705057 /* sledgehammer-75.png in Resources */,
 				9CAD341917FAF85600705057 /* sledgehammer-100.png in Resources */,
+				9CAD341D17FB03CE00705057 /* coin.mp3 in Resources */,
+				9CAD341F17FB055C00705057 /* sledgehammer.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
