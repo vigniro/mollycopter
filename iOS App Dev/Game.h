@@ -14,6 +14,7 @@
 
 @class Player;
 @class Goal;
+@class Coin;
 
 
 @interface Game : CCScene <InputLayerDelegate>
@@ -36,6 +37,8 @@
     CGFloat _landscapeWidth;
     BOOL _playerFollow;
     BOOL _gameOver;
+    Coin *_coin;
+    NSMutableArray *_coinArray;
 }
 
 + (id)scene;

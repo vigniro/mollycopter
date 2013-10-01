@@ -8,6 +8,7 @@
 
 #import "Game.h"
 #import "Player.h"
+#import "Coin.h"
 #import "ChipmunkAutoGeometry.h"
 #import "Goal.h"
 #import "SimpleAudioEngine.h"
@@ -94,6 +95,21 @@
         _playerFollow = YES;
         _gameOver = NO;
         
+        NSMutableArray *coinArray = [[NSMutableArray alloc] init];
+        _coinArray = coinArray;
+        
+
+        // Add coins
+        for (int i = 0; i <= 5; i++){
+            Coin *coin = [[Coin alloc] initWithSpace:_space position:ccp(i*200,200)];
+            [_gameNode addChild:coin];
+            [_coinArray addObject:coin];
+        }
+        
+        
+        
+        
+        
         //_hud = [HUDLayer node];
         //[self addChild:_hud];
         
@@ -103,15 +119,15 @@
     return self;
 }
 
-- (void)addPoint
+- (void)addPoint:(int)points
 {
-    score++; //I think: score++; will also work.
+    score += points;
     [scoreLabel setString:[NSString stringWithFormat:@"%d", score]];
 }
 
-- (void)deductPoint
+- (void)deductPoint:(int)points
 {
-    score -= 10; //I think: score++; will also work.
+    score -= points;
     [scoreLabel setString:[NSString stringWithFormat:@"%d", score]];
 }
 
@@ -122,12 +138,12 @@
     
     ChipmunkBody *firstChipmunkBody = firstBody->data;
     ChipmunkBody *secondChipmunkBody = secondBody->data;
-    [self addPoint];
+    [self deductPoint:10];
     
     if ((firstChipmunkBody == _player.chipmunkBody && secondChipmunkBody == _goal.chipmunkBody) ||
         (firstChipmunkBody == _goal.chipmunkBody && secondChipmunkBody == _player.chipmunkBody)){
         NSLog(@"TANK HIT GOAL :D:D:D xoxoxo");
-        [self deductPoint];
+        [self addPoint:1000];
         
         
         // Play sfx
@@ -148,6 +164,37 @@
         _gameOver = YES;
         [_hud showRestartMenu:YES];
     }
+    
+    Coin *removeCoin;
+    
+    for(Coin *coin in _coinArray){
+        if ((firstChipmunkBody == _player.chipmunkBody && secondChipmunkBody == coin.chipmunkBody) ||
+            (firstChipmunkBody == coin.chipmunkBody && secondChipmunkBody == _player.chipmunkBody)){
+            NSLog(@"Collected coin.");
+            [self addPoint:100];
+            
+            // Play sfx
+            //[[SimpleAudioEngine sharedEngine] playEffect:@"Impact.wav" pitch:(CCRANDOM_0_1() * 0.3f) + 1 pan:0 gain:1];
+            
+            // Remove physics body
+            //[_space smartRemove:_coin.chipmunkBody];
+            for (ChipmunkShape *shape in coin.chipmunkBody.shapes) {
+                [_space smartRemove:shape];
+            }
+            
+            // Remove coin from cocos2d
+            [coin removeFromParentAndCleanup:YES];
+            
+            removeCoin = coin;
+            
+            // Play particle effect
+            //[_splashParticles resetSystem];
+        }
+    }
+    
+    [_coinArray removeObject:removeCoin];
+
+    
     
     return YES;
 }
@@ -217,6 +264,7 @@
     NSArray *ceilingTerrainShapes = [ceilingSimpleLine asChipmunkSegmentsWithBody:ceilingTerrainBody radius:0 offset:cpvzero];
     for (ChipmunkShape *shape in ceilingTerrainShapes)
     {
+        shape.friction = 0.2f;
         [_space addShape:shape];
     }
 }

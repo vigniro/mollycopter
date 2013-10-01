@@ -11,33 +11,27 @@
 @implementation Coin
 - (id)initWithSpace:(ChipmunkSpace *)space position:(CGPoint)position;
 {
-    self = [super initWithFile:@"mileyBall.png"];
+    self = [super initWithFile:@"mdmagold.png"];
     if (self)
     {
         _space = space;
         
         if (_space != nil)
-        {
-            //_configuration = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"]];
-            
+        {            
             CGSize size = self.textureRect.size;
-            cpFloat mass = size.width * size.height;
-            cpFloat moment = cpMomentForBox(mass, size.width, size.height);
             
-            ChipmunkBody *body = [ChipmunkBody bodyWithMass:mass andMoment:moment];
+            ChipmunkBody *body = [ChipmunkBody staticBody];
             body.pos = position;
-            ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:size.width height:size.height];
-            
+            //ChipmunkShape *shape = [ChipmunkPolyShape boxWithBody:body width:size.width height:size.height];
+            ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:size.width/2 offset:cpv(0,0)];
+            shape.sensor = YES;
+
             // Add to space
-            [_space addBody:body];
-            [_space addShape:shape];
+            [_space addShape: shape];
             
             // Add to pysics sprite
+            body.data = self;
             self.chipmunkBody = body;
-            
-            // Apply a constant lateral force to make the player move to the right.
-            //cpVect forceVector = cpvmult(ccp(0,1), 100000);
-            //[self.chipmunkBody applyForce:forceVector offset:cpvzero];
         }
     }
     return self;
