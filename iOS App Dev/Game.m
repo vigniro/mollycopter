@@ -11,14 +11,15 @@
 #import "ChipmunkAutoGeometry.h"
 #import "Goal.h"
 #import "SimpleAudioEngine.h"
+#import "HUDLayer.h"
 
 @implementation Game
 
 + (id)scene {
     CCScene *scene = [CCScene node];
     
-    HUDLayer *hud = [HUDLayer node];
-    [scene addChild:hud z:1];
+    Game *layer = [Game node];
+    [scene addChild: layer];
     
     return scene;
 }
@@ -94,8 +95,8 @@
         _playerFollow = YES;
         _gameOver = NO;
         
-        //_hudLayer = [HudLayer node];
-        //[self addChild:_hudLayer];
+        //_hud = [HUDLayer node];
+        //[self addChild:_hud];
         
         // Your initilization code goes here
         [self scheduleUpdate];
@@ -146,7 +147,7 @@
         [_splashParticles resetSystem];
         
         _gameOver = YES;
-        //[_hud showRestartMenu:YES];
+        [_hud showRestartMenu:YES];
     }
     
     return YES;
