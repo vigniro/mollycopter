@@ -99,16 +99,8 @@
         _gameOver = NO;
         
         [self createCoins];
+        [self createHammers];
         
-        // Add hammers
-        NSMutableArray *hammerArray = [[NSMutableArray alloc] init];
-        _hammerArray = hammerArray;
-        
-        for (int i = 0; i <= 2; i++){
-            Sledgehammer *hammer = [[Sledgehammer alloc] initWithSpace:_space position:ccp(i*500,200)];
-            [_gameNode addChild:hammer];
-            [_hammerArray addObject:hammer];
-        }
         
         // Your initilization code goes here
         [self scheduleUpdate];
@@ -300,15 +292,53 @@
 
 - (void)createCoins
 {
-    // Add coins
+    // Add coins - TODO: make random
     NSMutableArray *coinArray = [[NSMutableArray alloc] init];
     _coinArray = coinArray;
     
-    Coin *coin = [[Coin alloc] initWithSpace:_space position:ccp(250,160)];
-    [_gameNode addChild:coin];
-    [_coinArray addObject:coin];
+    Coin *coin1 = [[Coin alloc] initWithSpace:_space position:ccp(25,170)];
+    [_gameNode addChild:coin1];
+    [_coinArray addObject:coin1];
     
+    Coin *coin2 = [[Coin alloc] initWithSpace:_space position:ccp(250,180)];
+    [_gameNode addChild:coin2];
+    [_coinArray addObject:coin2];
+    
+    Coin *coin3 = [[Coin alloc] initWithSpace:_space position:ccp(900,90)];
+    [_gameNode addChild:coin3];
+    [_coinArray addObject:coin3];
 
+    Coin *coin4 = [[Coin alloc] initWithSpace:_space position:ccp(1300,200)];
+    [_gameNode addChild:coin4];
+    [_coinArray addObject:coin4];
+    
+    Coin *coin5 = [[Coin alloc] initWithSpace:_space position:ccp(1800,170)];
+    [_gameNode addChild:coin5];
+    [_coinArray addObject:coin5];
+    
+    Coin *coin6 = [[Coin alloc] initWithSpace:_space position:ccp(1900,130)];
+    [_gameNode addChild:coin6];
+    [_coinArray addObject:coin6];
+}
+
+- (void)createHammers
+{
+    // Add hammers -- TODO: Make Random
+    NSMutableArray *hammerArray = [[NSMutableArray alloc] init];
+    _hammerArray = hammerArray;
+    
+    Sledgehammer *hammer1 = [[Sledgehammer alloc] initWithSpace:_space position:ccp(20,170)];
+    [_gameNode addChild:hammer1];
+    [_hammerArray addObject:hammer1];
+    
+    Sledgehammer *hammer2 = [[Sledgehammer alloc] initWithSpace:_space position:ccp(500,180)];
+    [_gameNode addChild:hammer2];
+    [_hammerArray addObject:hammer2];
+    
+    
+    Sledgehammer *hammer3 = [[Sledgehammer alloc] initWithSpace:_space position:ccp(1500,50)];
+    [_gameNode addChild:hammer3];
+    [_hammerArray addObject:hammer3];
 }
 
 - (void)touchStarted
