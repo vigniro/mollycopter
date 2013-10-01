@@ -57,7 +57,7 @@
         
         // Create debug node
         CCPhysicsDebugNode *debugNode = [CCPhysicsDebugNode debugNodeForChipmunkSpace:_space];
-        debugNode.visible = YES;
+        debugNode.visible = NO;
         [self addChild:debugNode];
         
         // Add goal
